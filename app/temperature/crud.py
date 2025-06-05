@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Session
 from app.temperature import models, schemas
+from datetime import datetime
 
 
 def get_all_temperatures(db: Session):
@@ -15,7 +16,8 @@ def get_temperatures_by_city(db: Session, city_id: int):
 def create_temperature(db: Session, temperature: schemas.TemperatureCreate):
     db_temperature = models.Temperature(
         city_id=temperature.city_id,
-        temperature=temperature.temperature
+        temperature=temperature.temperature,
+        date_time=datetime.utcnow()
     )
     db.add(db_temperature)
     db.commit()

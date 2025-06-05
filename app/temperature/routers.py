@@ -19,7 +19,7 @@ def get_temperatures(db: Session = Depends(get_db)):
 
 
 @router.get("/{city_id}", response_model=list[schemas.Temperature])
-def get_get_temperature_by_city(city_id: int, db: Session = Depends(get_db)):
+def get_temperature_by_city(city_id: int, db: Session = Depends(get_db)):
     temperatures = crud.get_temperatures_by_city(
         db=db,
         city_id=city_id

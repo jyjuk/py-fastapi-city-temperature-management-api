@@ -25,7 +25,7 @@ def get_city(city_id: int, db: Session = Depends(get_db)):
 
 
 @router.delete("/{city_id}")
-def delete_city(city_id, db: Session = Depends(get_db)):
+def delete_city(city_id: int, db: Session = Depends(get_db)):
     city = crud.delete_city(db=db, id_city=city_id)
     if not city:
         raise HTTPException(status_code=404, detail="City not found")
