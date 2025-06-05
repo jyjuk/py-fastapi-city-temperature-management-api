@@ -1,8 +1,8 @@
-"""Create cities and temperatures
+"""Fix schema
 
-Revision ID: 5de4044a0956
+Revision ID: 5edb3cf1f476
 Revises: 151001c9476f
-Create Date: 2025-06-04 13:51:36.118793
+Create Date: 2025-06-05 08:25:44.306982
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = '5de4044a0956'
+revision: str = '5edb3cf1f476'
 down_revision: Union[str, None] = '151001c9476f'
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
